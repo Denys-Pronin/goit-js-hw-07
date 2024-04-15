@@ -11,7 +11,7 @@ const wrapper = document.querySelector("#boxes");
 
 function createBoxes(amount) {
   let size = 30;
-
+  const boxArr = [];
   if (wrapper.children.length > 0) {
     wrapper.innerHTML = "";
   }
@@ -22,12 +22,13 @@ function createBoxes(amount) {
       box.style.height = size + "px";
       box.style.width = size + "px";
       box.style.backgroundColor = getRandomHexColor();
-      wrapper.append(box);
+      boxArr.push(box);
       size += 10;
     }
   } else {
     console.log("fail");
   }
+  wrapper.append(...boxArr);
 }
 
 function destroyBoxes() {

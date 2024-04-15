@@ -28,7 +28,6 @@ const images = [
 ];
 function createGallery(images) {
   const gallery = document.querySelector(".gallery");
-
   const galleryItems = images.map((image) => {
     const li = document.createElement("li");
     const img = document.createElement("img");
@@ -37,7 +36,7 @@ function createGallery(images) {
     li.appendChild(img);
     return li;
   });
-  galleryItems.forEach((item) => gallery.appendChild(item));
+  gallery.append(...galleryItems);
 }
 
 createGallery(images);
