@@ -25,10 +25,10 @@ function createBoxes(amount) {
       boxArr.push(box);
       size += 10;
     }
+    wrapper.append(...boxArr);
   } else {
     console.log("fail");
   }
-  wrapper.append(...boxArr);
 }
 
 function destroyBoxes() {
@@ -37,6 +37,7 @@ function destroyBoxes() {
 
 btnCreate.addEventListener("click", (event) => {
   createBoxes(inputValue.value);
+  inputValue.value = "";
 });
 btnDestroy.addEventListener("click", (event) => {
   destroyBoxes();
